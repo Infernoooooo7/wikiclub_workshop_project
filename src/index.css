@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-paper: #f7f1e8;
+  --color-sand: #efe5d6;
+  --color-sand-dark: #ded0bd;
+  --color-ink: #29231d;
+  --color-ink-muted: #756b60;
+  --color-terracotta: #c85f43;
+  --font-sans: 'DM Sans', sans-serif;
+  --font-display: Fraunces, serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+:root { font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #f7f1e8;
+  font-family: 'DM Sans', sans-serif;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+.field-label { display: block; color: #756b60; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+.field-input { width: 100%; border: 1px solid #ded0bd; border-radius: 0.9rem; background: #fff; padding: 0.9rem 1rem; color: #29231d; outline: none; transition: border-color 160ms, box-shadow 160ms; }
+.field-input:focus { border-color: #c85f43; box-shadow: 0 0 0 3px rgba(200, 95, 67, 0.15); }
+.field-input:disabled { cursor: wait; opacity: 0.65; }
+.panel { border: 1px solid #ded0bd; border-radius: 1.5rem; background: rgba(255, 255, 255, 0.62); padding: 1.5rem; box-shadow: 0 20px 60px rgba(93, 62, 39, 0.07); }
+.button-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.75rem; border-radius: 999px; background: #c85f43; padding: 0.85rem 1.3rem; color: #fff; font-size: 0.875rem; font-weight: 700; transition: background 160ms, transform 160ms; }
+.button-primary:hover { background: #a94c35; transform: translateY(-1px); }
+.button-primary:disabled { cursor: wait; opacity: 0.6; transform: none; }
+.button-secondary { display: inline-flex; align-items: center; justify-content: center; border: 1px solid #ded0bd; border-radius: 999px; background: #fff; padding: 0.7rem 1.1rem; color: #29231d; font-size: 0.875rem; font-weight: 700; transition: border-color 160ms, background 160ms; }
+.button-secondary:hover { border-color: #c85f43; background: #fffaf5; }
+.choice-tile { cursor: pointer; border: 1px solid #ded0bd; border-radius: 0.9rem; background: #fff; padding: 1rem; transition: border-color 160ms, background 160ms; }
+.choice-tile:hover, .choice-tile-active { border-color: #c85f43; background: #fffaf5; }
+.eyebrow { color: #c85f43; font-family: 'DM Mono', monospace; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; }
+.brand-mark { display: grid; height: 2.25rem; width: 2.25rem; place-items: center; border-radius: 0.75rem; background: #29231d; color: #f7f1e8; font-family: Fraunces, serif; font-size: 1.3rem; }
+.avatar { display: grid; height: 2.2rem; width: 2.2rem; place-items: center; border: 2px solid #f7f1e8; border-radius: 999px; font-size: 0.72rem; font-weight: 700; }
+.avatar-0 { background: #d98e65; color: #fff; }.avatar-1 { background: #879f8a; color: #fff; }.avatar-2 { background: #9d8795; color: #fff; }
+.quiz-card { border: 1px solid #ded0bd; border-radius: 1.5rem; background: #fff; padding: 1.5rem; box-shadow: 0 20px 60px rgba(93, 62, 39, 0.07); }
+.score-panel { display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem; border-radius: 1.5rem; background: #29231d; padding: 1.5rem; }
+.score-mark { color: #d98e65; font-family: Fraunces, serif; font-size: 2rem; line-height: 1; }
+button { cursor: pointer; }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid rgba(200, 95, 67, 0.35); outline-offset: 2px; }
+
+@media (min-width: 640px) { .panel, .quiz-card, .score-panel { padding: 2rem; } }

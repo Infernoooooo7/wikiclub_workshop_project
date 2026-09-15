@@ -12,12 +12,25 @@ npm run dev
 
 On Windows PowerShell, use `Copy-Item .env.example .env` instead of `cp`.
 
+If `npm run dev` reports that a Rolldown native binding is blocked, the Windows application-control policy is blocking Vite's native dependency. Run `npm install` again from an approved project location or ask your administrator to allow the package's native binding, then retry `npm run dev`.
+
 The production checks are:
 
 ```bash
 npm run build
 npm run lint
 ```
+
+## Backend
+
+Install the Python dependencies and start the API from the project root:
+
+```bash
+python -m pip install -r requirements.txt
+uvicorn main:app --reload --port 8000
+```
+
+Copy `.env.example` to `.env` and configure `GEMINI_API_KEY`, `KAGGLE_USERNAME`, and `KAGGLE_KEY`. The Kaggle dataset is downloaded automatically on the first quiz request. Keep `.env` out of version control. Set `VITE_USE_MOCK=false` in the frontend environment to use the API at `VITE_API_BASE_URL`.
 
 ## Backend handoff
 
